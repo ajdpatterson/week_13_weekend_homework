@@ -29,12 +29,18 @@ public class Shop {
     }
 
     public double getTotalProfit() {
+//        double total = 0;
+//        for (ISell item: stock){
+//            double profit = item.getSellPrice() - item.getPurchasePrice();
+//            total += profit;
+//        }
+//        return total;
         double total = 0;
-        for (ISell item: stock){
-            double profit = item.getSellPrice() - item.getPurchasePrice();
+        for (ISell item : stock){
+            double profit = item.getPurchasePrice() * item.calculateMarkup();
             total += profit;
         }
-        return total;
+        return total/100;
 
     }
 }

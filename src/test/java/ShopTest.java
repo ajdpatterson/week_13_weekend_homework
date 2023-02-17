@@ -21,7 +21,7 @@ public class ShopTest {
     public void before(){
         piano = new Piano("ivory", "red", 1000, 2000, "plink plonk", true, InstrumentFamily.PERCUSSION);
         stock = new ArrayList<>();
-        drumsticks = new Drumsticks("wood", 1000, 2000, 2);
+        drumsticks = new Drumsticks("wood", 10, 25, 2);
         guitar = new Guitar("wood", "blue", 1000,2000, "twang", 5, InstrumentFamily.STRINGS);
         stock.add(guitar);
         shop = new Shop(stock);
@@ -49,6 +49,6 @@ public class ShopTest {
         shop.addItem(piano);
         shop.addItem(guitar);
         shop.addItem(drumsticks);
-        assertEquals(4000, shop.getTotalProfit(), 0.00);
+        assertEquals(3015, shop.getTotalProfit(), 0.00);
     }
 }
